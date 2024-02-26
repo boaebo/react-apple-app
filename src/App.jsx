@@ -11,13 +11,13 @@ const Layout = () => {
   return (
     <div>
       <Nav />
-
       <Outlet />
     </div>
   )
 }
 
 function App() {
+  
 
   return (
     <div className='app'>

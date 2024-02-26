@@ -42,52 +42,52 @@ const Row = ({ title, id, fetchUrl }) => {
       <h2>{title}</h2>
 
       <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      breakpoints={{
-        1378:{
-          slidesPerView:6,
-          slidesPerGroup:6,
-        },
-        998:{
-          slidesPerView:5,
-          slidesPerGroup:5,
-        },
-        625:{
-          slidesPerView:4,
-          slidesPerGroup:4,
-        },
-        0:{
-          slidesPerView:3,
-          slidesPerGroup:3,
-        }
-      }}
-      
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-    >
-      
+        // install Swiper modules
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        breakpoints={{
+          1378: {
+            slidesPerView: 6,
+            slidesPerGroup: 6,
+          },
+          998: {
+            slidesPerView: 5,
+            slidesPerGroup: 5,
+          },
+          625: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+          },
+          0: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+          }
+        }}
 
-      <div id={id} className='row_posters'>
-        {movies.map((movie) => (
-          <SwiperSlide
-          key={movie.id}>
-            <Wrap>
-          <img
-    
-            className='row_poster'
-            src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-            alt={movie.name}
-            onClick={() => handleClick(movie)}
-          >
-          </img>
-          </Wrap>
-          </SwiperSlide>
-        ))}
-      </div>
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log('slide change')}
+      >
+
+
+        <div id={id} className='row_posters'>
+          {movies.map((movie) => (
+            <SwiperSlide
+              key={movie.id}>
+              <Wrap>
+                <img
+
+                  className='row_poster'
+                  src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+                  alt={movie.name}
+                  onClick={() => handleClick(movie)}
+                >
+                </img>
+              </Wrap>
+            </SwiperSlide>
+          ))}
+        </div>
       </Swiper>
       {modalOpen ?
         <MovieModal {...movieSelected} setModalOpen={setModalOpen} />
@@ -96,7 +96,7 @@ const Row = ({ title, id, fetchUrl }) => {
   )
 }
 
-const Container =styled.div`
+const Container = styled.div`
   padding: 0 0 26px;
 `
 
